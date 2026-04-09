@@ -1,0 +1,1 @@
+This is my repository for all assignments and related coursework to the class GEOG 492: Webmapping at the University of Oregon.
