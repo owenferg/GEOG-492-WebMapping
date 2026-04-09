@@ -9,7 +9,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v11',
     center: [centerLng, centerLat],
-    zoom: 11,
+    zoom: 12,
 });
 
 // zoom
