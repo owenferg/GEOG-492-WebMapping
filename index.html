@@ -4,31 +4,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GEOG 492 Web Mapping</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.5;
-        max-width: 42rem;
-        margin: 3rem auto;
-        padding: 0 1rem;
-      }
-
-      h1 {
-        margin-bottom: 0.5rem;
-      }
-
-      ul {
-        padding-left: 1.25rem;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <h1>GEOG 492 Web Mapping</h1>
-    <h2>Owen Ferguson</h2>
-    <p>Select an assignment:</p>
-    <ul>
-      <li><a href="Assignment1/Assignment1.html">Assignment 1</a></li>
-      <li><a href="README.md">Repository README</a></li>
-    </ul>
+    <main class="page-shell">
+      <section class="assignment-info">
+        <p class="eyebrow">Owen Ferguson</p>
+        <h1>GEOG 492: Webmapping</h1>
+        <div class="assignment-grid" aria-label="Assignments">
+          <a class="assignment-card" href="Assignment1/Assignment1.html">
+            <span class="assignment-label">Assignment 1</span>
+          </a>
+          <a class="assignment-card" href="Assignment2/Assignment2.html">
+            <span class="assignment-label">Assignment 2</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="map-section" aria-label="Interactive map widget">
+        <div class="map-head">
+          <div class="map-hint">Map dev tools</div>
+          <label class="crosshair-toggle" for="crosshair-toggle">
+            <input id="crosshair-toggle" type="checkbox" checked>
+            Show center crosshair
+          </label>
+        </div>
+
+        <div class="map-frame">
+          <div id="map"></div>
+          <div class="crosshair-overlay" aria-hidden="true">
+            <span class="crosshair-line crosshair-line-horizontal"></span>
+            <span class="crosshair-line crosshair-line-vertical"></span>
+          </div>
+          <div class="overlay map-controls">
+            <div class="zoom-box" aria-live="polite">
+              <div>
+                <div class="zoom-label">Zoom</div>
+                <div class="zoom-value" id="zoom-value">--</div>
+              </div>
+            </div>
+          </div>
+          <button class="overlay center-copy-button" id="center-copy-button" type="button">Copy center coords</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js" defer></script>
   </body>
 </html>

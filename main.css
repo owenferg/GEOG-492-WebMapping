@@ -1,0 +1,321 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0f0e;
+  --bg-alt: #111715;
+  --panel: #141a18;
+  --panel-border: #24312c;
+  --text: #e7ede8;
+  --muted: #a5b1ab;
+  --accent: #6f8f57;
+  --accent-strong: #88a86b;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+a {
+  color: var(--accent-strong);
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 2.5rem;
+}
+
+.assignment-info {
+  padding-bottom: 1rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.assignment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.assignment-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid var(--panel-border);
+  background: rgb(47, 62, 47);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.assignment-card:hover {
+  border-color: rgba(111, 143, 87, 0.55);
+}
+
+.assignment-label {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.assignment-action {
+  margin-top: 1rem;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+}
+
+.map-section {
+  padding-top: 1rem;
+  border-top: 1px solid var(--panel-border);
+}
+
+.map-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.map-hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.crosshair-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(111, 143, 87, 0.25);
+  background: rgba(10, 14, 12, 0.82);
+  color: var(--text);
+  font-size: 0.9rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.crosshair-toggle:hover {
+  border-color: rgba(111, 143, 87, 0.55);
+}
+
+.crosshair-toggle input {
+  margin: 0;
+  accent-color: var(--accent-strong);
+}
+
+.map-frame {
+  position: relative;
+  height: min(72vh, 760px);
+  min-height: 480px;
+  overflow: hidden;
+  border: 1px solid var(--panel-border);
+  background: #0f1412;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+}
+
+.crosshair-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 450;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.18s ease;
+}
+
+.map-frame.crosshair-hidden .crosshair-overlay {
+  opacity: 0;
+}
+
+.crosshair-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: rgba(255, 0, 0, 0.8);
+}
+
+.crosshair-line-horizontal {
+  width: 20px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.crosshair-line-vertical {
+  width: 2px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: absolute;
+  z-index: 500;
+  pointer-events: none;
+}
+
+.map-controls {
+  left: 1rem;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.zoom-box,
+.center-copy-button {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(111, 143, 87, 0.25);
+  background: rgba(10, 14, 12, 0.82);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+}
+
+.zoom-box {
+  width: fit-content;
+}
+
+.center-copy-button {
+  left: 1rem;
+  bottom: 2.5rem;
+  pointer-events: auto;
+  width: fit-content;
+  min-width: 11rem;
+  font: inherit;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.center-copy-button:hover {
+  border-color: rgba(111, 143, 87, 0.45);
+}
+
+.center-copy-button:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.zoom-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.zoom-value {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.mapboxgl-ctrl-group {
+  border: 1px solid rgba(111, 143, 87, 0.25) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow) !important;
+  background: grey !important;
+}
+
+.mapboxgl-ctrl-group button {
+  width: 34px;
+  height: 34px;
+  background-color: rgba(55, 91, 56, 0.92) !important;
+}
+
+.mapboxgl-ctrl-group button + button {
+    border-top: 1px solid grey !important;
+}
+
+.mapboxgl-ctrl button.mapboxgl-ctrl-zoom-in,
+.mapboxgl-ctrl button.mapboxgl-ctrl-zoom-out {
+  color: var(--text) !important;
+}
+
+.mapboxgl-popup-content {
+  padding: 0.75rem 0.9rem;
+  background: rgba(16, 21, 18, 0.96);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+.mapboxgl-popup-content strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--accent-strong);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: rgba(16, 21, 18, 0.96) !important;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 1rem, 1100px);
+    padding-top: 1rem;
+  }
+
+  .map-head {
+    align-items: flex-start;
+  }
+
+  .assignment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-frame {
+    min-height: 420px;
+    height: 66vh;
+  }
+
+  .map-controls {
+    left: 0.75rem;
+    top: 0.75rem;
+  }
+
+  .center-copy-button {
+    left: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .crosshair-line-horizontal {
+    width: 44px;
+  }
+
+  .crosshair-line-vertical {
+    height: 44px;
+  }
+}
