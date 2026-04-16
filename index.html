@@ -29,10 +29,13 @@
       <section class="map-section" aria-label="Interactive map widget">
         <div class="map-head">
           <div class="map-hint">Map dev tools</div>
-          <label class="crosshair-toggle" for="crosshair-toggle">
-            <input id="crosshair-toggle" type="checkbox" checked>
-            Show center crosshair
-          </label>
+          <div class="map-head-controls" aria-label="Map display controls">
+            <label class="crosshair-toggle" for="crosshair-toggle">
+              <input id="crosshair-toggle" type="checkbox" checked>
+              Show center crosshair
+            </label>
+            <button class="style-toggle" id="style-toggle" type="button">Satellite map</button>
+          </div>
         </div>
 
         <div class="map-frame">

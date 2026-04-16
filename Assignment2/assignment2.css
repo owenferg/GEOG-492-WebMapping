@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Helvetica, sans-serif;
+    background-color: rgb(221, 240, 216);
+}
+
+.page-title-block {
+    padding: 1.25rem 1rem 1rem;
+}
+
+.page-title-block h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: #0b160d;
+}
+
+.page-title-block h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #0b160d;
+    font-weight:500;
+}
+
+.map-block {
+    padding: 1rem;
+    border: 1px solid transparent;
+}
+
+.map-block h1 {
+    margin-bottom: 0.75rem;
+}
+
+.map-row {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.map-caption {
+    flex: 0 0 34%;
+    max-width: 34%;
+    margin: 0;
+    line-height: 1.6;
+    padding: 0.9rem 1rem;
+}
+
+.map-hood .map-caption {
+    background-color: rgba(18, 31, 20, 0.78);
+}
+
+.map-rainier .map-caption {
+    background-color: rgba(16, 28, 46, 0.78);
+}
+
+.map-baker .map-caption {
+    background-color: rgba(34, 20, 56, 0.78);
+}
+
+.map-caption a {
+    font-weight: 700;
+    color: white;
+}
+
+.map-hood {
+    background-color: #223a26;
+    color: white;
+}
+
+.map-rainier {
+    background-color: #203d63;
+    color: white;
+}
+
+.map-baker {
+    background-color: #3b2361;
+    color: white;
+}
+
+.map-row > div[id^="map"] {
+    flex: 1 1 auto;
+}
+
+.map-row > div[id^="map"] {
+    border: 2px solid rgba(255, 255, 255, 0.14);
+    overflow: hidden;
+}
+
+.map-hood .map-row > div[id^="map"] {
+    border-color: rgba(183, 224, 187, 0.22);
+}
+
+.map-rainier .map-row > div[id^="map"] {
+    border-color: rgba(185, 215, 255, 0.22);
+}
+
+.map-baker .map-row > div[id^="map"] {
+    border-color: rgba(225, 196, 255, 0.22);
+}
+
+#map1 {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+#map2 {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+#map3 {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .map-row {
+        flex-direction: column;
+    }
+
+    .map-caption {
+        max-width: 100%;
+        flex-basis: auto;
+    }
+}

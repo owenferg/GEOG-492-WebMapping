@@ -5,47 +5,47 @@ mapboxgl.accessToken = "pk.eyJ1Ijoib3dlbmZlcmciLCJhIjoiY21uaHp6a3Z5MDg5NjJwb2Rrd
 // map inits
 var map = new mapboxgl.Map({
     container: 'map1',
-    style: 'mapbox://styles/mapbox/dark-v11',
-    center: [-121.69314602427785, 45.36851297684787],
-    zoom: 11,
+    style: 'mapbox://styles/mapbox/standard-satellite',
+    center: [-122.168, 45.457],
+    zoom: 9,
 })
 
 var map2 = new mapboxgl.Map ({
     container: 'map2', 
-    style: 'mapbox://styles/mapbox/dark-v11', 
-    center: [-121.76278818006217, 46.85058457028113], 
-    zoom: 11,
+    style: 'mapbox://styles/mapbox/standard-satellite', 
+    center: [-122.014, 47.238], 
+    zoom: 7,
 });
 
 var map3 = new mapboxgl.Map ({
     container: 'map3',
-    style: 'mapbox://styles/mapbox/dark-v11',
-    center: [-121.82099024078967, 48.77369128438814],
-    zoom: 11,
+    style: 'mapbox://styles/mapbox/standard-satellite',
+    center: [-122.337, 49.001],
+    zoom: 7.5,
 })
 
 // markers and popups
 var popup = new mapboxgl.Popup()
-    .setText('This is my first point.');
+    .setText('Mt. Hood');
 
 var popup2 = new mapboxgl.Popup()
-.setText('This is my second point.');
+.setText('Mt. Rainier');
 
 var popup3 = new mapboxgl.Popup()
-.setText('This is my third point.');
+.setText('Mt. Baker');
 
 var marker = new mapboxgl.Marker({color: 'red'})
-    .setLngLat([-121.69314602427785, 45.36851297684787])
+    .setLngLat([-121.71310, 45.37486])
     .setPopup(popup)
     .addTo(map);
 
 var marker2 = new mapboxgl.Marker({color:'blue'})
-    .setLngLat([-121.76278818006217, 46.85058457028113]) 
+    .setLngLat([-121.77632, 46.84670]) 
     .setPopup(popup2) 
     .addTo(map2); 
 
 var marker3 = new mapboxgl.Marker({color:'blue'})
-    .setLngLat([-121.82099024078967, 48.77369128438814]) 
+    .setLngLat([-121.84200, 48.78190]) 
     .setPopup(popup3) 
     .addTo(map3); 
 

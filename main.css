@@ -125,9 +125,41 @@ h1 {
   border-color: rgba(111, 143, 87, 0.55);
 }
 
+.map-head-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .crosshair-toggle input {
   margin: 0;
   accent-color: var(--accent-strong);
+}
+
+.style-toggle {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(111, 143, 87, 0.25);
+  background: rgba(10, 14, 12, 0.82);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.style-toggle:hover {
+  border-color: rgba(111, 143, 87, 0.55);
+}
+
+.style-toggle:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+.style-toggle:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
 }
 
 .map-frame {
@@ -214,6 +246,7 @@ h1 {
   font: inherit;
   font-size: 0.9rem;
   text-align: left;
+  white-space: pre-line;
   cursor: pointer;
   box-shadow: none;
 }
