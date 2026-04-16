@@ -24,12 +24,8 @@ body {
 }
 
 .map-block {
-    padding: 1rem;
+    padding: 0 1rem 1rem 1rem;
     border: 1px solid transparent;
-}
-
-.map-block h1 {
-    margin-bottom: 0.75rem;
 }
 
 .map-row {
