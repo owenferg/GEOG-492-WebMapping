@@ -1,8 +1,10 @@
+/* base page styles */
 body {
     margin: 0;
     padding: 0;
 }
 
+/* page link styles */
 .back-link {
     font-size: 15.2px;
 }
@@ -13,24 +15,25 @@ body {
     text-decoration: none;
 }
 
+/* map container */
 #map {
     position: relative;
     height: calc(100vh - 3.25rem);
     width: 100%;
 }
 
-/*  style for paragraph tags */
+/* paragraph text */
 p {
     color: white;
 }
 
-/* style for heading level 4 tags */
+/* heading text */
 h4 {
     color: white;
     margin-left: 10px;
 }
 
-/*  style for items with the class "LegendContainer" */
+/* legend container */
 .LegendContainer {
     position: absolute;
     bottom: 20px;
@@ -39,11 +42,12 @@ h4 {
     width: 300px;
     height: 40px;
     background: rgba(80, 80, 80, .75);
-    transition: width 2s, height 2s; /* this is the time it takes for the container to transition */
+    /* container transition timing */
+    transition: width 2s, height 2s;
     border-radius: 7px;
 }
 
-/*  style for items with the class "descriptionPanel" */
+/* description panel */
 .descriptionPanel {
     position: absolute;
     bottom: 65px;
@@ -57,37 +61,38 @@ h4 {
     border-radius: 7px;
 }
 
-/*  style for items with the class "descriptionPanel" when active */
+/* active legend state */
 .LegendContainer:active {
     width: 240px;
     height: 250px;
 }
 
-/* style for items with the class "legendItem" */
+/* legend item */
 .legendItem {
     margin: 0px;
     padding-left: 10px;
-    display:inline-block;
-    margin:auto;
+    display: inline-block;
+    margin: auto;
     transform: translate(50%, 50%);
 }
-    
 
-/* style for items with the class "layerDescription" */
+/* layer label */
 .layerDescription {
     color: white;
     padding-left: 10px;
 }
 
-    
+/* renter symbol */
 .renter {
-        color:#cc8b00;
-}
-.owner{
-        color:#38d7ff;
+    color: #cc8b00;
 }
 
-/* style for items with the class "chevron" */
+/* owner symbol */
+.owner {
+    color: #38d7ff;
+}
+
+/* chevron icon */
 .chevron {
     position: relative;
     margin-left: 45%;

@@ -1,44 +1,49 @@
- <!DOCTYPE html>
- <html>
- <head>
-     <meta charset='utf-8' />
-     <title>Owners vs Renters Map</title>
-     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
-     <link rel="stylesheet" href="../headers.css">
-     <link rel="stylesheet" href="assignment3.css" />
- </head>
- <body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Owners vs Renters Map</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
+  <!-- styles and map libraries -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="../headers.css">
+  <link rel="stylesheet" href="assignment3.css" />
+</head>
+<body>
+
+  <!-- back link -->
   <a class="back-link" href="../index.html">&lt; See all assignments</a>
 
-   <div id='map'></div>
+  <!-- map container -->
+  <div id='map'></div>
 
-   <!-- map description panel -->
-    <div class="descriptionPanel" id="descriptionPanel" style="height: 250px;">
-     <span onClick=panelSelect() id="glyph" class="chevron glyphicon glyphicon-chevron-down"></span>
-     <hr/>
-     <h4>WHAT AM I LOOKING AT?</h4>
-     <p style="margin-left: 10px; margin-right: 10px;">
-       This is a map showing every single person in the Portland Area as a dot. Data is taken from the 2017 US Census, and is accurate at the level of a block; however, within each block location is randomized. Points are colored based on the number of homeowners versus renters on a block.
-     </p>
-   </div>
+  <!-- map description panel -->
+  <div class="descriptionPanel" id="descriptionPanel" style="height: 250px;">
+    <span onClick=panelSelect() id="glyph" class="chevron glyphicon glyphicon-chevron-down"></span>
+    <hr/>
+    <h4>WHAT AM I LOOKING AT?</h4>
+    <p style="margin-left: 10px; margin-right: 10px;">
+      This is a map showing every single person in the Portland Area as a dot. Data is taken from the 2017 US Census, and is accurate at the level of a block; however, within each block location is randomized. Points are colored based on the number of homeowners versus renters on a block.
+    </p>
+  </div>
 
-   <!-- map legend-->
-      <div class="LegendContainer">
-     <div class="legendItem">
-         <span class="owner">&#11044;</span>
-         <span class="layerDescription">Owners</span>
-     </div>
-     <div class="legendItem">
-         <span class="renter">&#11044;</span>
-         <span class="layerDescription">Renters</span>
-     </div>
-   </div>
+  <!-- map legend -->
+  <div class="LegendContainer">
+    <div class="legendItem">
+      <span class="owner">&#11044;</span>
+      <span class="layerDescription">Owners</span>
+    </div>
+    <div class="legendItem">
+      <span class="renter">&#11044;</span>
+      <span class="layerDescription">Renters</span>
+    </div>
+  </div>
 
-   <script src="assignment3.js"></script>
+  <!-- scripts -->
+  <script src="assignment3.js"></script>
 
- </body>
- </html>
+</body>
+</html>
