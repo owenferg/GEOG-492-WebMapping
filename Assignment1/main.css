@@ -48,5 +48,5 @@ h2 {
     width: 35%;
     padding: 0.75rem 1rem;
     z-index: 9999;
-    background
+    background: hsla(0, 0%, 84%, 0.8);
 }
