@@ -1,0 +1,74 @@
+/* CSS code between the <style> tags */
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+
+/* The CSS for the "Fly" buttons  */
+.buttonPanel {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 220px;
+}
+
+.fly {
+    padding: 10px;
+    border-style: solid;
+    border-color: oldlace;
+    font-size: 1em;
+    color: oldlace;
+    background: DarkRed;
+    cursor:pointer;
+}
+
+.fly:hover {
+    background: rgb(90, 0, 0);
+}
+
+.customPopup {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 340px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    padding: 16px;
+    color: #1f1f1f;
+    background: rgba(255, 255, 255, 0.88);
+    font-family: 'Atma', cursive;
+    font-size: 1.05em;
+}
+
+.customPopup.hidden {
+    display: none;
+}
+
+.customPopup iframe,
+.customPopup audio {
+    max-width: 100%;
+}
+
+.customPopupClose {
+    float: right;
+    width: auto;
+    padding: 2px 8px;
+    border-style: solid;
+    border-color: DarkRed;
+    color: DarkRed;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+/* Insert the CSS for the image here */
+.popupImage {
+    width: 100%;
+}
+
+/* Insert the CSS for the button here */
+button {
+    font-family: 'Atma', cursive;
+    font-weight: 600;
+}
